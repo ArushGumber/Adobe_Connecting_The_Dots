@@ -1,18 +1,16 @@
 # Adobe India Hackathon Round 1A - PDF Outline Extractor
 
 ## Solution Overview
-Advanced PDF outline extraction using marker-pdf's ML-powered document understanding.
+This solution extracts structured outlines (Title + H1/H2/H3 headings) from PDF documents using intelligent heuristics and font analysis.
 
-## Key Features
-- Uses marker-pdf's deep learning models for layout detection
-- Automatic heading hierarchy detection (H1/H2/H3)
-- Robust title extraction from metadata and content
-- High accuracy across diverse document formats
-- CPU-optimized for performance
+## Approach
+1. **Title Extraction**: PDF metadata → Largest font text on first page
+2. **Heading Detection**: Multi-factor analysis (font size, bold, patterns, keywords)
+3. **Level Classification**: Font size ratios + numbering patterns → H1/H2/H3
 
 ## Libraries Used
-- `marker-pdf`: ML-powered PDF processing and structure extraction
-- `torch`: Deep learning backend
+- `pdfplumber`: PDF text and layout extraction
+- `PyPDF2`: PDF metadata access
 
 ## Build & Run
 ```bash
